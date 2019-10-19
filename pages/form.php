@@ -1,56 +1,21 @@
 <?php
-/**
-	Project Name: Butthurt Form
-	Description: Some little project of some sort for IRC
-	Author: Gabriel Roach
-	Author URI: https://taek.us/
-	Project URI: http://git.taek.us/Taek/bhf
-	Demo URI: http://taek.us/dev/bhf/
-	License: GNU Affero General Public License v3.0
-**/
-
-	define(`base`, true);
-	if(exists(`assets/the_things.php`) {
-		require(`assets/the_things.php`);
-	} else {
-		echo ' Missing Configuration File';
-		exit();
-	}
-?>
-<!DOCTYPE HTML>
+	if (!defined("base")) {
+ 		header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+ 		exit;
+ 	}
+echo`<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>ButtHurt Form</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<rel link="assets/default.css" type="style/css">
+		<link rel="stylesheet" type="text/css" link="assets/default.css">
 	</head>
 	<body>
 		<div class="main" id="main">
 			<div class="header" id="header"><h1>IRC Butthurt Assessment</h1></div>
-			<div class="subheader" id="subheader"><h4><i>[A service provided by the SpotChat Administration]</i></h4></div>
-			<?php
-			/**
-			Project Name: ButtHurt Form
-			Description: Allowing of IRC users to submit a form online (known as a ButtHurt Form).
-			Author: Taek
-			Author URI: https://taek.us/
-			Project URI: http://git.taek.us/Taek/butthurtform
-			Demo URI: http://dev.taek.us/butthurt/
-			License: GPLv2
-			**/
-			if (!isset($_GET['v']) || $_GET['v'] == NULL) {
-				$view = 'form';
-			} elseif (isset($_GET['v']) && $_GET['v'] != NULL) {
-				$view = $_GET['v'];
-			}
-			include_once('db.con.php');
-			switch($view){
-				case "form":
-					if($_SERVER['REQUEST_METHOD'] == 'POST') {
-						_submitted();
-					} else {
-					echo '
-					<form name="form1" class="form" value="form" action="index.php?view=form" method="post">
+				<div class="subheader" id="subheader"><h4><i>[A service provided by the SpotChat Administration]</i></h4></div>
+					<div class="content" id="content">
+						<form name="form1" class="form" value="form" action="index.php?view=form" method="post">
 							Your IRC Nickname: <input type="text" value="Mintbotd" name="nickname" maxlength="20">
 							<br /><div class="warning">(If your nick is longer than 20 characters, consider suicide instead)</div><br />
 							<table class="table" id="table" border="1">
@@ -103,36 +68,11 @@
 							<input type="submit" name="submit" value="Submit">
 						</form>
 						<br /><br />
-					</div>';
-					}
-				break;
-
-				case "public":
-					echo 'This will display the uid of each submitted data as linksm, might add a database count later on.<br /><br />';
-					if(!isset($_GET['id']) || $_GET['id'] == NULL) {
-						_pub_view();
-					} else {
-						echo 'Display specific Butthurt post';
-					}
-				break;
-
-				case "private":
-					echo 'This will display all submitted data without redaction. Will require a login to view this.<br /><br />';
-					function _login() {
-					}
-
-					function _logout() {
-					}
-				break;
-
-				defaut:
-					echo 'You can ignore this.';
-				break;
-			}
-			?>
-			<div class="fwrap" id="fwrap">
+					</div>
+				<div class="fwrap" id="fwrap">
 			<div class="footer" id="footer">[ <a href="?v=form">New Butthurt</a> | <a href="?v=public">View Butthurts</a> | <a href="?v=private">Admins Only</a> ]</div>
 		</div>
 		</div>
 	</body>
-</html>
+</html>`;
+?>

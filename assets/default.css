@@ -1,0 +1,10 @@
+.main { width: 100%; text-align: center; }
+.header { }
+.subheader { position: relative; top: -20px; }
+textarea { line-height: 1; height: 14px; width: 180px; font-size: 12px; border: inset 2px 2px; margin: 0; padding: 0; resize: none;}
+.warning { font-size: 12px; }
+.table { width: 45%; margin: 0 auto; }
+.td { font-size: 12px; }
+.list { position: relative; font-size: 12px; text-align: left; width: 45%; margin: 0 auto; }
+.fwrap { position: relative; bottom: 5px; width: 100%; }
+.footer { margin: 0 auto; }
