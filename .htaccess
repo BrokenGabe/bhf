@@ -1,0 +1,4 @@
+<FilesMatch "\.(htaccess|inc|sql)$">
+Order Allow,Deny
+Deny from All
+</FilesMatch>
