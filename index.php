@@ -10,8 +10,8 @@
 **/
 
 	define(`base`, true);
-	if(exists(`assets/the_things.php`) {
-		require(`assets/the_things.php`);
+	if(exists(`assets/the_things.inc`) {
+		require(`assets/the_things.inc`);
 	} else {
 		echo ' Missing Configuration File';
 		exit();
@@ -23,6 +23,6 @@
 		$view = $_GET['page'];
 	}
 	if (in_array($page, $valid_pages)) {
-		include('pages/' . $page . '.php');
+		include('pages/' . $page . '.inc');
 	};
 ?>

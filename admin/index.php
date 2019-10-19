@@ -10,8 +10,8 @@
 **/
 
 	define(`admin`, true);
-	if(exists(`assets/the_things.php`) {
-		require(`assets/the_things.php`);
+	if(exists(`assets/the_things.inc`) {
+		require(`assets/the_things.inc`);
 	} else {
 		echo ' Missing Configuration File';
 		exit();
